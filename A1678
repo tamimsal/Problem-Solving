@@ -1,0 +1,65 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define int             long long
+#define endl            '\n'
+#define debug(x)        cout<<"[" << #x << " is:" << x << "] "<<endl;
+
+
+
+void solve() 
+{
+
+    int n;
+    cin >> n;
+    vector<int>v(n);
+    int ans =0;
+    map<int,int>m;
+    int zero=0;
+    for (int i = 0; i < n; i++)
+    {
+        cin >> v[i];
+        if(v[i] == 0){
+            zero++;
+        }
+        else{
+            m[v[i]]++;
+        }
+    }
+    if(zero > 0 ){
+        cout<< n - zero << endl;
+        return;
+    }
+    bool f =false;  
+    for(auto x : m){
+        if (x.second > 1)
+        {   
+            f = true;   
+            break;
+        }
+    }
+    if(f){
+        cout << n << endl;
+        return;
+    }
+    else{
+        cout<< n+1 << endl;
+        
+    }
+    
+
+}  
+
+
+
+int32_t main()
+{
+    ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+    
+    int t = 1;  
+    cin >> t;
+    while(t--){
+        solve();
+    }
+    return 0;
+}
+ 
