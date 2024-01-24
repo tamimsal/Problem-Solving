@@ -1,0 +1,53 @@
+#include<iostream>
+#include<string>
+#include<map>
+#include<vector>
+using namespace std;
+#define int long long
+#define endl '\n'
+//By: Tamim
+
+void solve()
+{
+  int n;
+  cin >> n;
+  vector<int> a(n), b(n);
+  bool rated = false;
+  bool incresing = true;
+  for (size_t i = 0; i < n; i++)
+  {
+    cin >> a[i] >> b[i];
+    if(!rated && a[i] != b[i])
+      rated = true;
+
+    if(i > 0 && a[i] > a[i-1])
+      incresing = false;
+  }
+
+  if(rated){
+    cout << "rated" << endl;
+  }
+  else if(incresing){
+    cout << "maybe" << endl;
+  }
+  else{
+    cout << "unrated" << endl;
+  }
+  
+
+}
+int32_t main()
+{
+ 
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  cout.tie(0);
+  int t = 1;
+  //cin >> t;
+  while (t--)
+  {
+      solve();
+  }
+
+  return 0;
+}
