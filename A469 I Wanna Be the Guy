@@ -1,0 +1,50 @@
+#include<iostream>
+#include<string>
+#include<map>
+#include<vector>
+using namespace std;
+#define int long long
+#define endl '\n'
+//By: Tamim
+
+void solve()
+{
+  int n;
+  cin >> n;
+  int p,q;
+  cin >> p;
+  map<int,int>m;
+  for(int i = 0; i < p; i++){
+    int x;
+    cin >> x;
+    m[x]++;
+  }
+  cin >> q;
+  for(int i = 0; i < q; i++){
+    int x;
+    cin >> x;
+    m[x]++;
+  }
+  if(m.size() == n){
+    cout << "I become the guy." << endl;
+  }
+  else{
+    cout << "Oh, my keyboard!" << endl;
+  }
+
+}
+int32_t main()
+{
+ 
+  ios::sync_with_stdio(false);
+  cin.tie(0);
+  cout.tie(0);
+  int t = 1;
+  //cin >> t;
+  while (t--)
+  {
+      solve();
+  }
+
+  return 0;
+}
